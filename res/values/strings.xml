@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">btcontoroller</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string-array name="Planets">
+        <item>11111111</item>
+        <item>11111110</item>
+        <item>11111101</item>
+        <item>11111011</item>
+        <item>11110111</item>
+        <item>11101111</item>
+        <item>11011111</item>
+        <item>10111111</item>
+        <item>01111111</item>
+    </string-array>
+    <string name="planet_prompt">Select a planet</string>
+</resources>

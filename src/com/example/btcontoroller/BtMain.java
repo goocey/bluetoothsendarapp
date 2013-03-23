@@ -63,8 +63,8 @@ public class BtMain extends Activity implements OnClickListener {
          */
 
         spinner.setAdapter(mAdapter);
+
         
-        if(D) Log.e(TAG, "++create array adapter");
 //        // Get local Bluetooth adapter
 //        mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 //

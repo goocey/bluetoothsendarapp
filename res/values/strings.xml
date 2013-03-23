@@ -16,4 +16,5 @@
         <item>01111111</item>
     </string-array>
     <string name="planet_prompt">Select a planet</string>
+    <string name="sendend_bit">00000000</string>
 </resources>

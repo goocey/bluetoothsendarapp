@@ -19,12 +19,14 @@ import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
 
+
 //https://gist.github.com/1718672.git
 
-public class BtMain extends Activity {
+public class BtMain extends Activity implements OnClickListener {
     // Debugging
     private static final String TAG = "BluetoothController";
     private static final boolean D = true;
+    private int hoge = 0;
 	
     // Bluetooth定数
     private static final int REQUEST_CONNECT_DEVICE_SECURE = 1;
@@ -41,12 +43,6 @@ public class BtMain extends Activity {
     // Local Bluetooth adapter
     private BluetoothAdapter mBluetoothAdapter = null;
     
-    // 送信データ関連
-    private String[] msendStrings = {"00000000", "00000001", "00000010",
-    		"00000100"};
-    private String msendEndString = "11111111";
-
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +52,8 @@ public class BtMain extends Activity {
         
         // spinner
         Spinner spinner = (Spinner) findViewById(R.id.spinner1);
+        View button1 = findViewById(R.id.button1);
+        button1.setOnClickListener(this);
         
         ArrayAdapter<CharSequence> mAdapter = ArrayAdapter.createFromResource(this, R.array.Planets,
                 android.R.layout.simple_spinner_dropdown_item);
@@ -65,10 +63,6 @@ public class BtMain extends Activity {
          */
 
         spinner.setAdapter(mAdapter);
-
-
-
-        
         
         if(D) Log.e(TAG, "++create array adapter");
 //        // Get local Bluetooth adapter
@@ -97,6 +91,25 @@ public class BtMain extends Activity {
 //            //if (mChatService == null) setupChat();
 //        }
     }
+    
+    public void sendmessage() {
+        hoge++;
+        Toast.makeText(this, String.valueOf(hoge), Toast.LENGTH_SHORT).show();
+    }
+    
+    @Override
+    public void onClick(View v) {
+    	if(D) Log.e(TAG, "button click " + v.getId());
+    	switch(v.getId()) {
+    	case R.id.button1:
+    		sendmessage();
+    		break;
+    	case R.id.spinner1:
+    		break;
+    	}
+    }
+
+    
   
     
     

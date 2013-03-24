@@ -18,3 +18,8 @@ local.properties
 # Eclipse project files
 .classpath
 .project
+.DS_Store
+.settings/org.eclipse.core.resources.prefs
+src/.DS_Store
+src/com/.DS_Store
+src/com/example/.DS_Store

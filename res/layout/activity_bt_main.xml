@@ -8,13 +8,31 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".BtMain" >
 
-    <LinearLayout
-        android:id="@+id/linearLayout1"
+    <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="164dp"
+        android:layout_marginTop="160dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignRight="@+id/textView1"
+        android:layout_marginBottom="30dp"
+        android:text="TextView" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:orientation="vertical" >
 
         <Spinner
@@ -22,16 +40,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="14dp"
-            android:layout_marginTop="37dp" />
+            android:layout_marginTop="37dp"
+            android:gravity="bottom" />
 
         <Button
             android:id="@+id/button1"
             android:layout_width="136dp"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:layout_marginTop="43dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:text="Button" />
+            android:text="call function" />
 
     </LinearLayout>
 

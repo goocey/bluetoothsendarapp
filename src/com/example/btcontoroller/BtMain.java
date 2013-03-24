@@ -18,11 +18,12 @@ import android.widget.Spinner;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
+import net.shisashi.android.widget.LongClickRepeatAdapter;
 
 
 //https://gist.github.com/1718672.git
 
-public class BtMain extends Activity implements OnClickListener {
+public class BtMain extends Activity {
     // Debugging
     private static final String TAG = "BluetoothController";
     private static final boolean D = true;
@@ -43,6 +44,11 @@ public class BtMain extends Activity implements OnClickListener {
     // Local Bluetooth adapter
     private BluetoothAdapter mBluetoothAdapter = null;
     
+    //UIä÷òA
+    private TextView textNumber;
+    private Spinner spinner1;
+    private View button1;
+    
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,10 +56,23 @@ public class BtMain extends Activity implements OnClickListener {
         
         setContentView(R.layout.activity_bt_main);
         
+        textNumber = (TextView) findViewById(R.id.textView2);
+        
         // spinner
-        Spinner spinner = (Spinner) findViewById(R.id.spinner1);
-        View button1 = findViewById(R.id.button1);
-        button1.setOnClickListener(this);
+        spinner1 = (Spinner) findViewById(R.id.spinner1);
+        button1 = findViewById(R.id.button1);
+        textNumber.setText(String.valueOf(0));
+        
+        button1.setOnClickListener(new OnClickListener() {
+        	@Override
+        	public void onClick(View v) {
+        		sendmessage();
+        	}
+        });
+        
+        // í∑âüÇµÇµÇΩÇÁåJÇËï‘Çµë±ÇØÇÈÅB
+        LongClickRepeatAdapter.bless(button1);
+
         
         ArrayAdapter<CharSequence> mAdapter = ArrayAdapter.createFromResource(this, R.array.Planets,
                 android.R.layout.simple_spinner_dropdown_item);
@@ -62,7 +81,7 @@ public class BtMain extends Activity implements OnClickListener {
          * Attach the mLocalAdapter to the spinner.
          */
 
-        spinner.setAdapter(mAdapter);
+        spinner1.setAdapter(mAdapter);
 
         
 //        // Get local Bluetooth adapter
@@ -94,21 +113,8 @@ public class BtMain extends Activity implements OnClickListener {
     
     public void sendmessage() {
         hoge++;
-        Toast.makeText(this, String.valueOf(hoge), Toast.LENGTH_SHORT).show();
+        textNumber.setText(String.valueOf(hoge));
     }
-    
-    @Override
-    public void onClick(View v) {
-    	if(D) Log.e(TAG, "button click " + v.getId());
-    	switch(v.getId()) {
-    	case R.id.button1:
-    		sendmessage();
-    		break;
-    	case R.id.spinner1:
-    		break;
-    	}
-    }
-
     
   
     

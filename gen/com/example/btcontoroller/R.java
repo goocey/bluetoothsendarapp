@@ -8,9 +8,6 @@
 package com.example.btcontoroller;
 
 public final class R {
-    public static final class array {
-        public static final int Planets=0x7f060000;
-    }
     public static final class attr {
     }
     public static final class dimen {
@@ -27,25 +24,54 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f090005;
-        public static final int button1=0x7f090004;
-        public static final int linearLayout1=0x7f090002;
-        public static final int spinner1=0x7f090003;
-        public static final int textView1=0x7f090000;
-        public static final int textView2=0x7f090001;
+        public static final int action_settings=0x7f08000c;
+        public static final int button_scan=0x7f08000b;
+        public static final int downbutton=0x7f080006;
+        public static final int flbutton=0x7f080001;
+        public static final int frbutton=0x7f080002;
+        public static final int gridLayout1=0x7f080000;
+        public static final int new_devices=0x7f08000a;
+        public static final int paired_devices=0x7f080008;
+        public static final int rlbutton=0x7f080003;
+        public static final int rrbutton=0x7f080004;
+        public static final int title_new_devices=0x7f080009;
+        public static final int title_paired_devices=0x7f080007;
+        public static final int upbotton=0x7f080005;
     }
     public static final class layout {
         public static final int activity_bt_main=0x7f030000;
+        public static final int device_list=0x7f030001;
+        public static final int device_name=0x7f030002;
+        public static final int test_layout=0x7f030003;
     }
     public static final class menu {
-        public static final int bt_main=0x7f080000;
+        public static final int bt_main=0x7f070000;
     }
     public static final class string {
-        public static final int action_settings=0x7f050002;
+        public static final int DownButton=0x7f050011;
+        /**  BtMain Button 
+         */
+        public static final int FronLeftButton=0x7f05000c;
+        public static final int FronRightButton=0x7f05000d;
+        public static final int RearLeftButton=0x7f05000e;
+        public static final int RearRightButton=0x7f05000f;
+        public static final int UpButton=0x7f050010;
+        public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
-        public static final int hello_world=0x7f050001;
-        public static final int planet_prompt=0x7f050003;
-        public static final int sendend_bit=0x7f050004;
+        public static final int button_scan=0x7f05000b;
+        public static final int none_found=0x7f050008;
+        public static final int none_paired=0x7f050007;
+        /**   DeviceListActivity 
+         */
+        public static final int scanning=0x7f050005;
+        public static final int search_device_button=0x7f050003;
+        public static final int select_device=0x7f050006;
+        /**   BluetoothChat 
+         */
+        public static final int title_connecting=0x7f050002;
+        public static final int title_not_connected=0x7f050004;
+        public static final int title_other_devices=0x7f05000a;
+        public static final int title_paired_devices=0x7f050009;
     }
     public static final class style {
         /** 
@@ -69,10 +95,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f060000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
+        public static final int AppTheme=0x7f060001;
     }
 }

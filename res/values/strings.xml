@@ -2,27 +2,11 @@
 <resources>
 
     <string name="app_name">btcontoroller</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string-array name="Planets">
-        <item>11111111</item>
-        <item>11111110</item>
-        <item>11111101</item>
-        <item>11111011</item>
-        <item>11110111</item>
-        <item>11101111</item>
-        <item>11011111</item>
-        <item>10111111</item>
-        <item>01111111</item>
-    </string-array>
-    <string name="planet_prompt">Select a planet</string>
-    <string name="sendend_bit">00000000</string>
+    
     <!--  BluetoothChat -->
-    <string name="send">Send</string>
-    <string name="not_connected">You are not connected to a device</string>
-    <string name="bt_not_enabled_leaving">Bluetooth was not enabled. Leaving Bluetooth Chat.</string>
     <string name="title_connecting">connecting...</string>
-    <string name="title_connected_to">connected to <xliff:g id="device_name">%1$s</xliff:g></string>
+    <string name="search_device_button">Search Device</string>
     <string name="title_not_connected">not connected</string>
 
     <!--  DeviceListActivity -->
@@ -34,8 +18,12 @@
     <string name="title_other_devices">Other Available Devices</string>
     <string name="button_scan">Scan for devices</string>
 
-    <!-- Options Menu -->
-    <string name="secure_connect">Connect a device - Secure</string>
-    <string name="insecure_connect">Connect a device - Insecure</string>
-    <string name="discoverable">Make discoverable</string>
+    <!-- BtMain Button -->
+    <string name="FronLeftButton">FL</string>
+    <string name="FronRightButton">FR</string>
+    <string name="RearLeftButton">RL</string>
+    <string name="RearRightButton">RR</string>
+    <string name="UpButton">Up</string>
+    <string name="DownButton">Down</string>
+        
 </resources>

@@ -1,6 +1,5 @@
 package com.example.btcontoroller;
 
-import net.shisashi.android.widget.LongClickRepeatAdapter;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
@@ -11,8 +10,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 //https://gist.github.com/1718672.git
@@ -39,24 +36,28 @@ public class BtMain extends Activity {
 	private BluetoothAdapter mBluetoothAdapter = null;
 
 	//UI関連
-	private TextView textNumber;
-	private Spinner spinner1;
-	private View button1;
+	private View rrbutton;
+	private View rlbutton;
+	private View frbutton;
+	private View flbutton;
+	private View upbutton;
+	private View downbutton;
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState)  {
 		super.onCreate(savedInstanceState);
 		if (D)
 			Log.e(TAG, "+++ ON CREATE +++");
 
 		setContentView(R.layout.activity_bt_main);
-
-		textNumber = (TextView) findViewById(R.id.textView2);
-
-		// spinner
-		spinner1 = (Spinner) findViewById(R.id.spinner1);
-		button1 = findViewById(R.id.button1);
-		textNumber.setText(String.valueOf(0));
+		
+		// UIの取得
+		rrbutton = findViewById(R.id.rrbutton);
+		rlbutton = findViewById(R.id.rlbutton);
+		frbutton = findViewById(R.id.frbutton);
+		flbutton = findViewById(R.id.flbutton);
+		upbutton = findViewById(R.id.upbotton);
+		downbutton = findViewById(R.id.downbutton);
 
 		button1.setOnClickListener(new OnClickListener() {
 			@Override
@@ -64,19 +65,17 @@ public class BtMain extends Activity {
 				sendmessage();
 			}
 		});
-
-		// 長押ししたら繰り返し続ける。
-		LongClickRepeatAdapter.bless(button1);
-
-		ArrayAdapter<CharSequence> mAdapter = ArrayAdapter.createFromResource(this, R.array.Planets,
-				android.R.layout.simple_spinner_dropdown_item);
-
-		/*
-		 * Attach the mLocalAdapter to the spinner.
-		 */
-
-		spinner1.setAdapter(mAdapter);
-
+		search_button.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO 自動生成されたメソッド・スタブ
+	            serverIntent = new Intent(this, DeviceListActivity.class);
+	            startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE_SECURE);
+	            return true;
+			}
+		});
+		
 		// Get local Bluetooth adapter
 		mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
@@ -87,7 +86,8 @@ public class BtMain extends Activity {
 			return;
 		}
 	}
-
+	
+	public void OnClick
 	@Override
 	public void onStart() {
 		super.onStart();

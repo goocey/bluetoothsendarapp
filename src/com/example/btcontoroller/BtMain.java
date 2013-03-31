@@ -12,6 +12,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.example.btcontoroller.BluetoothChatService;
 import com.example.btcontoroller.DeviceListActivity;
@@ -47,14 +49,16 @@ public class BtMain extends Activity implements OnClickListener, OnTouchListener
 	private BluetoothChatService mChatService = null;
 
 	// UI関連
-	private View rrbutton;
-	private View rlbutton;
-	private View frbutton;
-	private View flbutton;
+	private ImageButton rrbutton;
+	private ImageButton rlbutton;
+	private ImageButton frbutton;
+	private ImageButton flbutton;
 	private View upbutton;
 	private View downbutton;
 	private View buttonscan;
 	private View carimg;
+	private TextView sendtext;
+
 
 	// 送信ビット保持
 	private int frst;
@@ -69,31 +73,29 @@ public class BtMain extends Activity implements OnClickListener, OnTouchListener
 			Log.e(TAG, "+++ ON CREATE +++");
 
 		setContentView(R.layout.activity_bt_main);
-
+		
 		// UIの取得
-		frbutton = findViewById(R.id.frbutton);
-		flbutton = findViewById(R.id.flbutton);
-		rrbutton = findViewById(R.id.rrbutton);
-		rlbutton = findViewById(R.id.rlbutton);
+		frbutton = (ImageButton)findViewById(R.id.frbutton);
+		flbutton = (ImageButton)findViewById(R.id.flbutton);
+		rrbutton = (ImageButton)findViewById(R.id.rrbutton);
+		rlbutton = (ImageButton)findViewById(R.id.rlbutton);
+		rlbutton.setPressed(true);
 		upbutton = findViewById(R.id.upbotton);
 		downbutton = findViewById(R.id.downbutton);
-		buttonscan = findViewById(R.id.button_scan);
 		carimg = findViewById(R.id.carimg);
-
-		// クリックイベント取得
-		frbutton.setOnClickListener(this);
-		flbutton.setOnClickListener(this);
-		rrbutton.setOnClickListener(this);
-		rlbutton.setOnClickListener(this);
-		upbutton.setOnTouchListener(this);
-		downbutton.setOnTouchListener(this);
+		buttonscan = findViewById(R.id.button_scan);
+		sendtext = (TextView)findViewById(R.id.sendtext);
+		
+		frbutton.setVisibility(View.INVISIBLE);
+		flbutton.setVisibility(View.INVISIBLE);
+		rrbutton.setVisibility(View.INVISIBLE);
+		rlbutton.setVisibility(View.INVISIBLE);
+		downbutton.setVisibility(View.INVISIBLE);
+		upbutton.setVisibility(View.INVISIBLE);
+		carimg.setVisibility(View.INVISIBLE);
+		sendtext.setVisibility(View.INVISIBLE);
+		
 		buttonscan.setOnClickListener(this);
-
-		// タイヤの状態を初期化
-		rrst = 0;
-		rlst = 0;
-		flst = 0;
-		frst = 0;
 
 		// Get local Bluetooth adapter
 		mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -142,7 +144,7 @@ public class BtMain extends Activity implements OnClickListener, OnTouchListener
 		default:
 			break;
 		}
-		return false;
+		return true;
 	}
 
 	/**
@@ -189,38 +191,51 @@ public class BtMain extends Activity implements OnClickListener, OnTouchListener
 	}
 	
 	public void onClick(View v) {
+		ImageButton ImageButton = null;
 		switch (v.getId()) {
 		case R.id.flbutton:
 			Log.e(TAG, "fl click");
 			if (setChangeTire(1)) {
-				v.setPressed(true);
+				ImageButton = (ImageButton)findViewById(v.getId());
+				Log.e(TAG,String.valueOf(ImageButton));
+				ImageButton.setPressed(true);
+			} else {
+				ImageButton = (ImageButton)findViewById(v.getId());
+				Log.e(TAG,String.valueOf(ImageButton));
+				ImageButton.setPressed(false);
 			}
 			break;
 		case R.id.frbutton:
 			Log.e(TAG, "fr click");
 			if (setChangeTire(2)) {	
-				v.setPressed(true);
+				ImageButton = (ImageButton)findViewById(v.getId());
+				ImageButton.setPressed(true);
+				Log.e(TAG,String.valueOf(ImageButton));
 			} else {
-				v.setPressed(false);
+				ImageButton = (ImageButton)findViewById(v.getId());
+				ImageButton.setPressed(false);
 			}
 			break;
 		case R.id.rrbutton:
 			Log.e(TAG, "rr click");
 			if (setChangeTire(3)) {
-				v.setPressed(true);
+				ImageButton = (ImageButton)findViewById(v.getId());
+				ImageButton.setPressed(true);
 			} else {
-				v.setPressed(false);
+				ImageButton = (ImageButton)findViewById(v.getId());
+				ImageButton.setPressed(false);
 			}
 			break;
 		case R.id.rlbutton:
 			Log.e(TAG, "rl click");
 			if (setChangeTire(4)) {
-				v.setPressed(true);
+				ImageButton = (ImageButton)findViewById(v.getId());
+				ImageButton.setPressed(true);
 			} else {
-				v.setPressed(false);
+				ImageButton = (ImageButton)findViewById(v.getId());
+				ImageButton.setPressed(false);
 			}
 			break;
-
 		case R.id.button_scan:
 			Log.e(TAG, "connect click");
 			Intent serverIntent = null;
@@ -254,12 +269,14 @@ public class BtMain extends Activity implements OnClickListener, OnTouchListener
 			Log.e(TAG, "down click");
 			message = getSendMessage(10, 10);
 			Log.e(TAG, message);
+			sendtext.setText(message);
 			sendMessage(message);
 			break;
 		case R.id.upbotton:
 			Log.e(TAG, "up click");
 			message = getSendMessage(20,10);
 			Log.e(TAG, message);
+			sendtext.setText(message);
 			sendMessage(message);
 			break;
 		}
@@ -269,12 +286,14 @@ public class BtMain extends Activity implements OnClickListener, OnTouchListener
     			Log.e(TAG, "down click");
     			message = getSendMessage(10, 20);
     			Log.e(TAG, message);
+    			sendtext.setText(message);
     			sendMessage(message);
     			break;
     		case R.id.upbotton:
     			Log.e(TAG, "up click");
     			message = getSendMessage(20,20);
     			Log.e(TAG, message);
+    			sendtext.setText(message);
     			sendMessage(message);
     			break;
     		}
@@ -374,6 +393,20 @@ public class BtMain extends Activity implements OnClickListener, OnTouchListener
                 + subTitle, Toast.LENGTH_SHORT).show();
 	}
 	private void showCarButton() {
+
+		// クリックイベント取得
+		frbutton.setOnClickListener(this);
+		flbutton.setOnClickListener(this);
+		rrbutton.setOnClickListener(this);
+		rlbutton.setOnClickListener(this);
+		upbutton.setOnTouchListener(this);
+		downbutton.setOnTouchListener(this);
+
+		// タイヤの状態を初期化
+		rrst = 0;
+		rlst = 0;
+		flst = 0;
+		frst = 0;
 		frbutton.setVisibility(View.VISIBLE);
 		flbutton.setVisibility(View.VISIBLE);
 		rrbutton.setVisibility(View.VISIBLE);
@@ -382,6 +415,7 @@ public class BtMain extends Activity implements OnClickListener, OnTouchListener
 		downbutton.setVisibility(View.VISIBLE);
 		buttonscan.setVisibility(View.VISIBLE);
 		carimg.setVisibility(View.VISIBLE);
+		sendtext.setVisibility(View.VISIBLE);
 	}
 
 

@@ -44,34 +44,6 @@
             android:visibility="visible" />
 
     </LinearLayout>
-    
-    <ImageButton
-        android:id="@+id/rlbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/carimg"
-        android:layout_toLeftOf="@+id/linearLayout1"
-        android:layout_marginLeft="31dp"
-        android:layout_marginTop="22dp"
-        android:src="@drawable/tirematerialns"
-        android:visibility="visible" />
-
-    <ImageButton
-        android:id="@+id/button_scan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/linearLayout1"
-        android:layout_toRightOf="@+id/carimg"
-        android:src="@drawable/bluetoothnconnect" />
-
-    <ImageButton
-        android:id="@+id/frbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/rrbutton"
-        android:layout_alignTop="@+id/carimg"
-        android:src="@drawable/tirematerialns"
-        android:visibility="visible" />
 
     <ImageButton
         android:id="@+id/rrbutton"
@@ -85,20 +57,38 @@
         android:visibility="visible" />
 
     <ImageButton
-        android:id="@+id/flbutton"
+        android:id="@+id/frbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/rrbutton"
         android:layout_alignTop="@+id/carimg"
+        android:src="@drawable/tirematerialns"
+        android:visibility="visible" />
+    
+    <ImageButton
+        android:id="@+id/rlbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/carimg"
         android:layout_toLeftOf="@+id/linearLayout1"
         android:src="@drawable/tirematerialns"
         android:visibility="visible" />
 
-    <TextView
-        android:id="@+id/sendtext"
+    <ImageButton
+        android:id="@+id/flbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button_scan"
-        android:layout_toLeftOf="@+id/flbutton"
-        android:text="送信文字" />
+        android:layout_alignLeft="@+id/rlbutton"
+        android:layout_alignTop="@+id/carimg"
+        android:src="@drawable/tirematerialns"
+        android:visibility="visible" />
+
+    <ImageButton
+        android:id="@+id/button_scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/linearLayout1"
+        android:layout_toRightOf="@+id/carimg"
+        android:src="@drawable/bluetoothnconnect" />
 
 </RelativeLayout>

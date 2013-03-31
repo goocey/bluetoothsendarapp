@@ -29,25 +29,27 @@ public final class R {
         public static final int tirematerialns=0x7f020005;
     }
     public static final class id {
-        public static final int button_scan=0x7f090006;
+        public static final int button_scan=0x7f090005;
         public static final int carimg=0x7f090000;
-        public static final int connectbutton=0x7f09000d;
+        public static final int connectbutton=0x7f09000e;
         public static final int downbutton=0x7f090003;
         public static final int flbutton=0x7f090008;
-        public static final int frbutton=0x7f090005;
+        public static final int frbutton=0x7f090006;
         public static final int linearLayout1=0x7f090001;
-        public static final int new_devices=0x7f09000c;
-        public static final int paired_devices=0x7f09000a;
-        public static final int rlbutton=0x7f090007;
-        public static final int rrbutton=0x7f090004;
-        public static final int title_new_devices=0x7f09000b;
-        public static final int title_paired_devices=0x7f090009;
+        public static final int new_devices=0x7f09000d;
+        public static final int paired_devices=0x7f09000b;
+        public static final int rlbutton=0x7f090004;
+        public static final int rrbutton=0x7f090007;
+        public static final int sendtext=0x7f090009;
+        public static final int title_new_devices=0x7f09000c;
+        public static final int title_paired_devices=0x7f09000a;
         public static final int upbotton=0x7f090002;
     }
     public static final class layout {
         public static final int activity_bt_main=0x7f030000;
-        public static final int device_list=0x7f030001;
-        public static final int device_name=0x7f030002;
+        public static final int activity_bt_main_enablebt=0x7f030001;
+        public static final int device_list=0x7f030002;
+        public static final int device_name=0x7f030003;
     }
     public static final class menu {
         public static final int bt_main=0x7f080000;

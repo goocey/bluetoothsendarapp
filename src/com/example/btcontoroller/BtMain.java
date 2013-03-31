@@ -180,11 +180,11 @@ public class BtMain extends Activity implements OnClickListener, OnTouchListener
 		switch (typestr) {
 		case 10:
 			// down
-			returnStr = "0010" + fr + fl + rl + rr;
+			returnStr = "0010" + rr + rl + fr + fl;
 			break;
 		case 20:
 			// up
-			returnStr = "0001" + fr + fl + rl + rr;
+			returnStr = "0001" + rr + rl + fr + fl;
 			break;
 		}
 		return returnStr;
@@ -193,26 +193,26 @@ public class BtMain extends Activity implements OnClickListener, OnTouchListener
 	public void onClick(View v) {
 		ImageButton ImageButton = null;
 		switch (v.getId()) {
-		case R.id.flbutton:
-			Log.e(TAG, "fl click");
-			if (setChangeTire(1)) {
+		case R.id.frbutton:
+			Log.e(TAG, "fr click");
+			if (setChangeTire(1)) {	
 				ImageButton = (ImageButton)findViewById(v.getId());
-				Log.e(TAG,String.valueOf(ImageButton));
 				ImageButton.setPressed(true);
+				Log.e(TAG,String.valueOf(ImageButton));
 			} else {
 				ImageButton = (ImageButton)findViewById(v.getId());
-				Log.e(TAG,String.valueOf(ImageButton));
 				ImageButton.setPressed(false);
 			}
 			break;
-		case R.id.frbutton:
-			Log.e(TAG, "fr click");
-			if (setChangeTire(2)) {	
+		case R.id.flbutton:
+			Log.e(TAG, "fl click");
+			if (setChangeTire(2)) {
 				ImageButton = (ImageButton)findViewById(v.getId());
-				ImageButton.setPressed(true);
 				Log.e(TAG,String.valueOf(ImageButton));
+				ImageButton.setPressed(true);
 			} else {
 				ImageButton = (ImageButton)findViewById(v.getId());
+				Log.e(TAG,String.valueOf(ImageButton));
 				ImageButton.setPressed(false);
 			}
 			break;

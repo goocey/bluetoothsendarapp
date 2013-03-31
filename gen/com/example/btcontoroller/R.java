@@ -17,61 +17,83 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f040000;
-        public static final int activity_vertical_margin=0x7f040001;
+        public static final int activity_horizontal_margin=0x7f050000;
+        public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
+        public static final int bluetoothconnect=0x7f020000;
+        public static final int bluetoothnconnect=0x7f020001;
+        public static final int car=0x7f020002;
+        public static final int ic_launcher=0x7f020003;
+        public static final int tirematerial=0x7f020004;
+        public static final int tirematerialns=0x7f020005;
     }
     public static final class id {
-        public static final int action_settings=0x7f08000c;
-        public static final int button_scan=0x7f08000b;
-        public static final int downbutton=0x7f080006;
-        public static final int flbutton=0x7f080001;
-        public static final int frbutton=0x7f080002;
-        public static final int gridLayout1=0x7f080000;
-        public static final int new_devices=0x7f08000a;
-        public static final int paired_devices=0x7f080008;
-        public static final int rlbutton=0x7f080003;
-        public static final int rrbutton=0x7f080004;
-        public static final int title_new_devices=0x7f080009;
-        public static final int title_paired_devices=0x7f080007;
-        public static final int upbotton=0x7f080005;
+        public static final int button_scan=0x7f090006;
+        public static final int carimg=0x7f090000;
+        public static final int connectbutton=0x7f09000d;
+        public static final int downbutton=0x7f090003;
+        public static final int flbutton=0x7f090008;
+        public static final int frbutton=0x7f090005;
+        public static final int linearLayout1=0x7f090001;
+        public static final int new_devices=0x7f09000c;
+        public static final int paired_devices=0x7f09000a;
+        public static final int rlbutton=0x7f090007;
+        public static final int rrbutton=0x7f090004;
+        public static final int title_new_devices=0x7f09000b;
+        public static final int title_paired_devices=0x7f090009;
+        public static final int upbotton=0x7f090002;
     }
     public static final class layout {
         public static final int activity_bt_main=0x7f030000;
         public static final int device_list=0x7f030001;
         public static final int device_name=0x7f030002;
-        public static final int test_layout=0x7f030003;
     }
     public static final class menu {
-        public static final int bt_main=0x7f070000;
+        public static final int bt_main=0x7f080000;
     }
     public static final class string {
-        public static final int DownButton=0x7f050011;
+        public static final int ConnectButton=0x7f060018;
+        public static final int DownButton=0x7f060017;
         /**  BtMain Button 
          */
-        public static final int FronLeftButton=0x7f05000c;
-        public static final int FronRightButton=0x7f05000d;
-        public static final int RearLeftButton=0x7f05000e;
-        public static final int RearRightButton=0x7f05000f;
-        public static final int UpButton=0x7f050010;
-        public static final int action_settings=0x7f050001;
-        public static final int app_name=0x7f050000;
-        public static final int button_scan=0x7f05000b;
-        public static final int none_found=0x7f050008;
-        public static final int none_paired=0x7f050007;
+        public static final int FronLeftButton=0x7f060012;
+        public static final int FronRightButton=0x7f060013;
+        public static final int RearLeftButton=0x7f060014;
+        public static final int RearRightButton=0x7f060015;
+        public static final int UpButton=0x7f060016;
+        public static final int action_settings=0x7f060001;
+        public static final int app_name=0x7f060000;
+        public static final int bt_not_enabled_leaving=0x7f060004;
+        public static final int button_scan=0x7f06000e;
+        public static final int discoverable=0x7f060011;
+        public static final int down=0x7f06001a;
+        public static final int fl=0x7f06001b;
+        public static final int fr=0x7f06001c;
+        public static final int insecure_connect=0x7f060010;
+        public static final int none_found=0x7f06000b;
+        public static final int none_paired=0x7f06000a;
+        public static final int not_connected=0x7f060003;
+        public static final int rl=0x7f06001d;
+        public static final int rr=0x7f06001e;
         /**   DeviceListActivity 
          */
-        public static final int scanning=0x7f050005;
-        public static final int search_device_button=0x7f050003;
-        public static final int select_device=0x7f050006;
+        public static final int scanning=0x7f060008;
+        /**  Options Menu 
+         */
+        public static final int secure_connect=0x7f06000f;
+        public static final int select_device=0x7f060009;
         /**   BluetoothChat 
          */
-        public static final int title_connecting=0x7f050002;
-        public static final int title_not_connected=0x7f050004;
-        public static final int title_other_devices=0x7f05000a;
-        public static final int title_paired_devices=0x7f050009;
+        public static final int send=0x7f060002;
+        public static final int title_connected_to=0x7f060006;
+        public static final int title_connecting=0x7f060005;
+        public static final int title_not_connected=0x7f060007;
+        public static final int title_other_devices=0x7f06000d;
+        public static final int title_paired_devices=0x7f06000c;
+        /**   BtMain Button Value 
+         */
+        public static final int up=0x7f060019;
     }
     public static final class style {
         /** 
@@ -95,10 +117,14 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f070000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
+        public static final int AppTheme=0x7f070001;
+        public static final int tire_button=0x7f070002;
+    }
+    public static final class xml {
+        public static final int tire_btn=0x7f040000;
     }
 }

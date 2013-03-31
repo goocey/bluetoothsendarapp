@@ -9,56 +9,21 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".BtMain" >
 
-    <GridLayout
-        android:id="@+id/gridLayout1"
+    <ImageView
+        android:id="@+id/carimg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="42dp"
-        android:columnCount="2"
-        android:padding="@dimen/activity_horizontal_margin"
-        android:paddingBottom="0dp"
-        android:paddingLeft="0dp"
-        android:paddingRight="0dp"
-        android:paddingTop="0dp" >
-
-        <Button
-            android:id="@+id/flbutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:text="@string/FronLeftButton" />
-
-        <Button
-            android:id="@+id/frbutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:text="@string/FronRightButton" />
-
-        <Button
-            android:id="@+id/rlbutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:text="@string/RearLeftButton" />
-
-        <Button
-            android:id="@+id/rrbutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_column="1"
-            android:layout_gravity="left|top"
-            android:layout_row="1"
-            android:text="@string/RearRightButton" />
-    </GridLayout>
+        android:layout_toLeftOf="@id/carimg"
+        android:src="@drawable/car"
+        android:visibility="invisible" />
 
     <LinearLayout
+        android:id="@+id/linearLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/carimg"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:orientation="vertical" >
 
         <Button
@@ -66,14 +31,65 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/UpButton" />
+            android:text="@string/UpButton"
+            android:visibility="invisible" />
 
         <Button
             android:id="@+id/downbutton"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/DownButton" />
+            android:gravity="center"
+            android:text="@string/DownButton"
+            android:visibility="invisible" />
+
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/rrbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/carimg"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="false"
+        android:layout_toRightOf="@+id/linearLayout1"
+        android:src="@drawable/tirematerialns"
+        android:visibility="invisible" />
+
+    <ImageButton
+        android:id="@+id/frbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/rrbutton"
+        android:layout_alignTop="@+id/carimg"
+        android:src="@drawable/tirematerialns"
+        android:visibility="invisible" />
+
+    <ImageButton
+        android:id="@+id/button_scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/linearLayout1"
+        android:layout_marginBottom="41dp"
+        android:layout_toRightOf="@+id/carimg"
+        android:src="@drawable/bluetoothnconnect" />
+
+    <ImageButton
+        android:id="@+id/rlbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/carimg"
+        android:layout_toLeftOf="@+id/linearLayout1"
+        android:src="@drawable/tirematerialns"
+        android:visibility="invisible" />
+
+    <ImageButton
+        android:id="@+id/flbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/rlbutton"
+        android:layout_alignTop="@+id/carimg"
+        android:src="@drawable/tirematerialns"
+        android:visibility="invisible" />
 
 </RelativeLayout>
